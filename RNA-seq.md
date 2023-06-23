@@ -4,7 +4,7 @@
 
 * 不同的建库方法可以通过“采样”的方式获得细胞中不同的“样本”数据
 
-![](./img/scr_RNA-seq_20230622183556.png)![](./RNA_Seq_Library.png)
+![](./img/scr_RNA-seq_20230622183556.png)
 
 ### 数据获取
 
@@ -32,22 +32,19 @@
   获取`RNA-seq`数据有很多方式，本试验采用NCBI的方式，通过搜索Bio-Project可以较为简便地获取感兴趣的测序数据，也可以通过查询相关`Pubmed`文献查看其raw data获取网址直接下载，TCGA等平台也有针对某些组织或实验方法的测序数据，但部分需要申请和额外权限。
 
   
+我们使用以下这篇文献的原始实验数据：
 
-  我们使用以下这篇文献的原始实验数据：
-
+![paper](./img/scr_RNA-seq_20230623220906.png)
   
-
   根据文章底部提供的原始数据网址搜索GEO（Gene Expression Omnibus）即可得到全部[原始数据](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153637)：
 
-  ![image-20230605004916055](C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230605004916055.png)
+![GEO_data](./img/scr_RNA-seq_20230623220733.png)
 
   由于NCBI下载数据需要`sratools`（安装麻烦，也不好使），我们选择使用直接在由EBI维护的ENA数据库上提供免费的数据维护源下载，具体方法是根据GEO页面上的SRA代号即可，我们通过勾选相应的field即可显示可以直接下载的连接（建议安装一些高级的下载软件，比如aria2、aspera等协议工具等），也可以直接：
 
   ```bash
   wget -nc -c -b ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR585/003/SRR5859403/SRR5859403.fastq.gz
   ```
-
-  ![image-20230605005559167](C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230605005559167.png)
 
   这样就可以下载得到原始的`fastq.gz`文件了。
 
@@ -66,8 +63,6 @@
   ```bash
   conda config --add channels bioconda
   ```
-
-  
 
   包含源后，创建新环境专门用于处理RNA-seq数据：
 
@@ -109,11 +104,11 @@
 
   * 序列的质量情况
 
-  ![image-20230605101802734](C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230605101802734.png)
+![data_quality](./img/scr_RNA-seq_20230623220946.png)
 
   * 序列的接头情况
 
-  ![image-20230605101818341](C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230605101818341.png)
+![adapter](./img/scr_RNA-seq_20230623221018.png)
 
   > 这里需要注意的是，不同的测序平台（platform）或建库方式可能使用不常用的接头，`fastqc`只能检测到Illumina平台常用的接头，需要注意对于公共数据我们需要针对GEO Data Processing栏关注文献的处理方法，也可以查看文献的Supplementary进行确定。
   >
@@ -300,6 +295,7 @@ ENSG00000241860.7|ENSG00000241860,90
 
 用`Excel`打开如下：
 
+![excel_data](./img/scr_RNA-seq_20230623221109.png)
 
 ## RNASeq 下游分析
 
@@ -313,7 +309,7 @@ https://www.nature.com/articles/s43018-021-00220-w#citeas
 
 本次我们使用DESeq2包进行差异表达基因分析，首先我们需要对数据进行预处理。
 
-```R vscode={"languageId": "r"}
+```R
 library(tidyverse)
 library(pheatmap)
 library(DESeq2)
@@ -321,7 +317,7 @@ library(readxl)
 library(EnhancedVolcano)
 ```
 
-```R vscode={"languageId": "r"}
+```r
 rna_seq <- read_excel(
     "RNAseq.xlsx",
     sheet = "Readcounts"
@@ -330,17 +326,17 @@ rna_seq <- read_excel(
 
 简单观察数据，可以看到实验中共有三组，control, shRNA1, shRNA2，每组一共四个样本，一共是12个样本。样本中基因的数目都是32866个基因。
 
-```R vscode={"languageId": "r"}
+```R
 print(dim(rna_seq))
 print(head(rna_seq))
 print(tail(rna_seq))
 ```
 
-#### (基因ID转换)
+#### 1.1 基因ID转换
 
 事实上，在表达量定量一步，我们常常使用的是人类基因组的注释文件(gtf格式)作为输入。这些文件几乎都是使用Ensemble ID作为基因的ID，而在差异表达分析中，我们常常需要使用基因的名字(Gene Symbol)作为分析的基础。因此，我们需要将基因的ID转换为基因的名字。这里我们使用的数据已经经过作者的ID转换，因此我们不需要再进行ID转换了。
 
-ENSGxxxxxxxxx.x
+Ensemble ID的格式是ENSGxxxxxxxxx.x，其中ENSG后面跟的数字是基因唯一的ID，.号后面的数字是版本号。
 
 其实ID转换的方法有非常多，许多生物信息网站上都有ID转换的功能，在R语言中也可以进行ID转换。例如可以使用ClusterProfiler包中的bitr函数进行ID转换。
 
@@ -350,6 +346,7 @@ ENSGxxxxxxxxx.x
 #genid <- bitr(rna_seq$Geneid, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Hs.eg.db)
 ```
 
+#### 1.2 数据预处理
 对数据进行一定的预处理，首先提取出基因名字，然后将基因名字作为行名，将样本名字作为列名。然后筛选掉部分不是基因的和表达量非常低的基因。
 
 ```R vscode={"languageId": "r"}
@@ -397,7 +394,7 @@ dds$type <- relevel(dds$type, ref = "control")
 dds <- DESeq(dds)
 ```
 
-#### 数据质控
+#### 1.3 数据质控
 
 在生物信息学分析中，数据质控是非常重要的一步。在RNAseq下游分析中我们也常常通过一些方法对数据进行质控。首先我们可以用PCA和聚类的方式对数据进行观察，看看数据是否有异常，例如是否有明显的分组，是否有明显的异常样本等等。
 
@@ -406,7 +403,7 @@ dds <- DESeq(dds)
 ```R vscode={"languageId": "r"}
 plotCounts(dds, gene = "RBMX", intgroup = "type")
 ```
-
+![](./img/scr_RNA-seq_20230623222226.png)
 之后我们可以使用PCA的方式对数据进行观察，可以看到数据的分组有点点问题
 
 ```R vscode={"languageId": "r"}
@@ -416,7 +413,7 @@ meta <- data.frame(row.names = colnames(rna_seq), type = id$type)
 p <- pca(vst, metadata=meta, removeVar = 0.05)
 biplot(p)
 ```
-
+ ![](./img/scr_RNA-seq_20230623222259.png) 
 ```R vscode={"languageId": "r"}
 res1 <- results(dds, name="type_shRNA1_vs_control")
 res2 <- results(dds, name="type_shRNA2_vs_control")
@@ -436,7 +433,8 @@ EnhancedVolcano(res2,
     y = "pvalue"
 )
 ```
-
+![](./img/scr_RNA-seq_20230623222318.png)
+![](./img/scr_RNA-seq_20230623222326.png)
 ```R vscode={"languageId": "r"}
 res_filtered <- res2 %>%
     as.data.frame() %>%
@@ -488,7 +486,7 @@ go_bp <- enrichGO(gene = differential_genes,
 dotplot(go_bp, title = "GO Biological Pathway", showCategory = 10)
 
 ```
-
+![](./img/scr_RNA-seq_20230623222357.png)
 ```R vscode={"languageId": "r"}
 differential_genes
 ```
@@ -527,9 +525,5 @@ gse_bp <- gseGO(
     pAdjustMethod = "BH",
     pvalueCutoff = 0.1,
 )
-
-```
-
-```R vscode={"languageId": "r"}
 
 ```
