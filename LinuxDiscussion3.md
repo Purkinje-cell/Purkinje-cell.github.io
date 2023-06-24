@@ -1,6 +1,6 @@
 ---
 title: "第四次讨论"
-author: "执笔：王沛雨 孙伟棠"
+author: "执笔：王沛宇 孙伟棠"
 date: "2023-03-30"
 output: 
   rmdformats::downcute:
@@ -11,10 +11,9 @@ output:
 ---
 
 
-
 ## LEB03组第三次讨论报告
 
-[TOC]
+执笔：王沛宇 孙伟棠
 
 ### 关于`HMMER`的使用
 

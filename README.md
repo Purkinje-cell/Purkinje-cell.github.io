@@ -10,7 +10,7 @@ Linux-based Essential Bioinformatics
 
 [第二次讨论报告-BLAST](./LinuxDiscussion2.md)
 
-[第三次讨论报告-HMMER](./LinuxDiscussion3.rmd)
+[第三次讨论报告-HMMER](./LinuxDiscussion3.md)
 
 [第四次讨论报告-Vim](./LinuxDiscussion4.md)
 
@@ -20,8 +20,12 @@ Linux-based Essential Bioinformatics
 
 [第七次讨论报告-Git冲突处理/Markdown图床](./LinuxDiscussion7.md)
 
-[TBTools 总结]()
+[TBTools 总结](./TBTools.md)
 
 [Conda 总结报告](./conda.md)
 
+[ChIP-seq 总结报告]
+
 [RNA-seq 总结报告](./RNA-seq.md)
+
+[GitHub Pages建立个人网站](./GithubPages.md)

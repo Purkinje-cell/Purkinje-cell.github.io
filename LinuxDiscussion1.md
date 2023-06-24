@@ -1,7 +1,5 @@
 ### Leb03组第一次讨论总结报告
 
-[TOC]
-
 **组：leb23G03**
 
 **第一次**
@@ -46,7 +44,6 @@
 
    * `polydot`：生成一个对于所有序列的相似度文件，两两产生
 
-     <img src="C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230306210122423.png" alt="image-20230306210122423" style="zoom:50%;" />
 
 4. 讨论`EMBOSS`软件包`dottup`和`dotmatcher`产生绘图错误的原因：
 
@@ -67,12 +64,10 @@
 
    修改之前：
 
-   <img src="C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230306201804433.png" alt="image-20230306201804433" style="zoom:33%;" />
-
+![](./img/scr_LinuxDiscussion1_20230624161950.png)
    修改之后：
 
-   <img src="C:\Users\10713\AppData\Roaming\Typora\typora-user-images\image-20230306203300390.png" alt="image-20230306203300390" style="zoom:33%;" />
-
+![](./img/scr_LinuxDiscussion1_20230624162006.png)
    我们的组长同学尝试了`conda`上的`emboss-6.5.7`，相应的输出结果与错误图一致；
 
 #### 问题
