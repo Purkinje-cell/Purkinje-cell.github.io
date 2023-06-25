@@ -40,8 +40,6 @@ hmmbuild -h # version output: v3.3.2
 
 用于实现以上功能的软件包括如下18个：
 
-![soft](C:\Users\SWT\Desktop\hmmersoft.png)
-
 其中，`hmmbuild`，`hmmsearch`，`hmmscan`和`hmmalign`包含蛋白质结构域分析与注释的主要流程，比如用数据库如`Pfam`
 
 > `Pfam`数据库系统由剑桥大学开发，收集蛋白质家族和蛋白质结构域的信息，可以对蛋白质进行结构和功能、进化分析等，应用于蛋白质结构功能预测、基因组注释和系统生物学研究。
@@ -96,7 +94,7 @@ GLB5_PETMA  RSAY.......
 //
 ```
 先建立profile 文件名：globin4.hmm
-```{r make profile ,eval=FALSE}
+```r
 (base) leb3b@bbt:~/0330$ hmmbuild globin4.hmm globin4.sto
 # hmmbuild :: profile HMM construction from multiple sequence alignments
 # HMMER 3.3.2 (Nov 2020); http://hmmer.org/
@@ -119,7 +117,8 @@ alen表示比对长度，mlen表示共有序列的长度
 eff_nseq表示比对的效率，re/pos 表示两个函数或概率的相对熵值，差异越大则熵越大，完全相同则熵为0
 
 less查看hmm文件
-```{r make hmm,eval=FALSE}
+
+```r
 HMMER3/f [3.3.2 | Nov 2020]
 NAME  globin4
 LENG  149
@@ -176,8 +175,7 @@ ln -s /rd1/home/public/HMMER/uniprot_sprot.fasta
 ```
     
 
-发现软链接不可用，服务器中HMMER文件夹下uniprot_sprot.fasta为指向原位置（../blast_data/swiss-prot/uniprot_sprot.fasta)的软链接，而原文件位置已经移动到了新位置/rd1/home/public/BLAST/BLAST_DB/uniprot_sprot.fasta。
-![figure 1 HEMMER文件夹下的软链接错误](C:\Users\SWT\Desktop\Screenshot 2023-03-30 165013.png)
+发现软链接不可用，服务器中HMMER文件夹下uniprot\_sprot.fasta为指向原位置（../blast\_data/swiss-prot/uniprot\_sprot.fasta)的软链接，而原文件位置已经移动到了新位置/rd1/home/public/BLAST/BLAST\_DB/uniprot\_sprot.fasta。
     
 重新创建软连接至uniprot_sprot.fasta
 
@@ -232,7 +230,7 @@ Scores for complete sequences (score includes all domains):
 ```
 找到的数据根据E-value升序，发现结果排序靠前的均为血红蛋白，与训练数据中含两个人血红蛋白相关
 
-#本地数据的扩展探究
+### 本地数据的扩展探究
 
 在使用`HMMER`前，先观察服务器上`/rd1/home/public/HMMER/`目录和`/rd1/home/public/hmmer-data/`目录下的文件，他们的格式以及内容：
 
@@ -258,7 +256,7 @@ Scores for complete sequences (score includes all domains):
   SPL02A          PHCQVEGCNLDLSSAKDYHRKHRICENHSKFPKVVVSGVERRFCQQCSRFHCLSEFDEKK
   SPL07A          ARCQVPDCEADISELKGYHKRHRVCLRCATASFVVLDGENKRYCQQCGKFHLLPDFDEGK
                     *    *  ::.  : *: :*::*   :. . .      :*:****.:** : :**  *
-  ```
+```
 
 * `15ATSBPD.FASTA`，序列文件，标准`fasta`格式，表示需要多序列比对的序列
 
@@ -364,7 +362,7 @@ Domain annotation for each sequence (and alignments):
 
 输出中后续的代码：表示比对共有序列的比对情况，字母代表匹配，`+`代表残基有正的`log-odds`发射分数，目标序列以及每个残基的后验概率
 
-###未解决的问题    
-1.插入氨基酸的评分矩阵每一行都是相同的，这取决于每种碱基在全局出现的概率，那为什么不统一储存全局出现的概率而是蛋白的每一位都储存相同的数值，这样不是比较浪费空间吗？
+### 未解决的问题
+1. 插入氨基酸的评分矩阵每一行都是相同的，这取决于每种碱基在全局出现的概率，那为什么不统一储存全局出现的概率而是蛋白的每一位都储存相同的数值，这样不是比较浪费空间吗？
       
-2.hmmbuild是如何处理比对结果的？当输入的序列长度不同时将如何计算profile的位数和各个位上的值?
+2. hmmbuild是如何处理比对结果的？当输入的序列长度不同时将如何计算profile的位数和各个位上的值?
