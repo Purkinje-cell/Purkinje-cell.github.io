@@ -33,3 +33,5 @@ Linux-based Essential Bioinformatics
 [生物信息学常用数据库](./生信数据库.md)
 
 [GitHub Pages建立个人网站](./GithubPages.md)
+
+[期末总结](./Final.md)
