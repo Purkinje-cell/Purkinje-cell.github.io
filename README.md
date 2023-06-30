@@ -20,12 +20,16 @@ Linux-based Essential Bioinformatics
 
 [第七次讨论报告-Git冲突处理/Markdown图床](./LinuxDiscussion7.md)
 
+[Linux基础命令总结](./LinuxBasics.md)
+
 [TBTools 总结](./TBTools.md)
 
 [Conda 总结报告](./conda.md)
 
-[ChIP-seq 总结报告]
+[ChIP-seq 总结报告](./ChIPseq.md)
 
 [RNA-seq 总结报告](./RNA-seq.md)
+
+[生物信息学常用数据库](./生信数据库.md)
 
 [GitHub Pages建立个人网站](./GithubPages.md)
