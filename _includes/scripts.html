@@ -1,4 +1,47 @@
 <script src="assets/js/main.min.js"></script>
+<script>
+(function () {
+  const storageKey = 'pc-theme';
+  const toggle = document.querySelector('[data-theme-toggle]');
+  if (!toggle) return;
+  const root = document.documentElement;
+  const getStorage = () => {
+    try {
+      return window.localStorage;
+    } catch (error) {
+      return null;
+    }
+  };
+  const storage = getStorage();
+  const applyTheme = (theme) => {
+    const nextTheme = theme === 'dark' ? 'dark' : 'light';
+    root.setAttribute('data-theme', nextTheme);
+    toggle.setAttribute('aria-pressed', nextTheme === 'dark');
+  };
+
+  const storedTheme = storage ? storage.getItem(storageKey) : null;
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+
+  toggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    applyTheme(next);
+    if (storage) {
+      storage.setItem(storageKey, next);
+    }
+  });
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+      if (storage && storage.getItem(storageKey)) {
+        return;
+      }
+      applyTheme(event.matches ? 'dark' : 'light');
+    });
+  }
+})();
+</script>
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
