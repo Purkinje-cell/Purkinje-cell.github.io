@@ -19,7 +19,7 @@ redirect_from:
 
 I am a first-year PhD student in Systems Biology at Columbia University Irving Medical Center. Before my PhD, I completed my undergraduate training at the School of Life Sciences, Peking University with a major in Bioinformatics.
 
-<a href='https://scholar.google.com/citations?user=8db4bFgAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=Citations"></a>.
+<!-- <a href='https://scholar.google.com/citations?user=8db4bFgAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=Citations"></a>. -->
 
 <span class='anchor' id='research'></span>
 
@@ -27,27 +27,27 @@ I am a first-year PhD student in Systems Biology at Columbia University Irving M
 
 My work integrates high-dimensional genomics with systems biology questions in oncology. Current interests include:
 
-- Single-cell transcriptomics for immune profiling in solid tumors
-- Spatial transcriptomics to map microenvironment niches
-- Integrative modeling of the cancer immune microenvironment during treatment
+- Single-cell transcriptomics
+- Spatial transcriptomics
+- Cancer microenvironment
 
 <span class='anchor' id='hobby'></span>
 
 ## Hobby
 
-Away from the bench, I enjoy long-distance running and landscape photography—both keep me curious and grounded. You can often find me exploring New York’s parks with a camera in hand.
+I love playing the Rubik's Cube and diving into geeky pursuits like Arch Linux and Emacs. I'm also a big anime fan, and my favorite is *Liz and the Blue Bird*
 
 <span class='anchor' id='cv'></span>
 
 ## CV
 
-Download my latest CV as a PDF: [Dingcheng Yi CV](files/dingcheng-yi-cv.pdf). Update the document in the `files/` directory to keep this link current.
+Download my latest CV as a PDF: [Dingcheng Yi CV](files/Dingcheng_Yi_CV_latest.pdf).
 
 <span class='anchor' id='blog'></span>
 
-## Blog
+<!-- ## Blog -->
 
-I share notes on computational biology and graduate life on the [blog](/blog/). Check back for new posts or subscribe via RSS when the feed launches.
+<!-- I share notes on computational biology and graduate life on the [blog](/blog/). Check back for new posts or subscribe via RSS when the feed launches. -->
 
 # 🎓 Education
 - *2025.09 - Present*, Columbia University Irving Medical Center, New York, USA, PhD Student
