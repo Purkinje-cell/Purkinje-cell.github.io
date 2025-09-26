@@ -1,0 +1,155 @@
+:root {
+  color-scheme: light;
+  --pc-bg: #ffffff;
+  --pc-surface: #ffffff;
+  --pc-text: #1f2933;
+  --pc-muted: #4b5563;
+  --pc-border: #e5e7eb;
+  --pc-link: #224b8d;
+  --pc-link-hover: #163a74;
+  --pc-toggle-hover: rgba(34, 75, 141, 0.1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --pc-bg: #0f172a;
+  --pc-surface: #111827;
+  --pc-text: #e2e8f0;
+  --pc-muted: #94a3b8;
+  --pc-border: #1f2937;
+  --pc-link: #38bdf8;
+  --pc-link-hover: #7dd3fc;
+  --pc-toggle-hover: rgba(56, 189, 248, 0.22);
+}
+
+html {
+  background-color: var(--pc-bg);
+  color: var(--pc-text);
+}
+
+body {
+  background-color: var(--pc-bg);
+  color: var(--pc-text);
+}
+
+.page,
+.page__inner-wrap,
+.page__content,
+.sidebar,
+.footer_site,
+.footer_site .footer_copyright,
+.author__content,
+.author__urls-wrapper,
+.masthead {
+  background-color: var(--pc-surface);
+  color: var(--pc-text);
+}
+
+.masthead {
+  border-bottom-color: var(--pc-border);
+}
+
+.sidebar,
+.page__inner-wrap,
+.footer_site,
+.page__content,
+.sidebar .author__urls-wrapper,
+.sidebar .author__urls-social li,
+.sidebar .author__urls-social a,
+.sidebar .author__urls-social span {
+  border-color: var(--pc-border);
+}
+
+.page__content {
+  color: var(--pc-text);
+}
+
+a {
+  color: var(--pc-link);
+}
+
+a:hover,
+a:focus {
+  color: var(--pc-link-hover);
+}
+
+.masthead__brand .masthead__title {
+  color: var(--pc-text);
+}
+
+.masthead__brand .masthead__title:hover {
+  color: var(--pc-link);
+}
+
+.masthead__subtitle,
+.sidebar p,
+.sidebar li,
+.page__content figcaption {
+  color: var(--pc-muted);
+}
+
+.masthead__menu-item a {
+  color: var(--pc-text);
+}
+
+.masthead__menu-item a:hover {
+  color: var(--pc-link);
+}
+
+.masthead__toggle {
+  border-color: var(--pc-border);
+}
+
+.masthead__toggle:hover,
+.masthead__toggle:focus {
+  background-color: var(--pc-toggle-hover);
+}
+
+:root[data-theme="dark"] .masthead__toggle {
+  background-color: rgba(148, 163, 184, 0.15);
+}
+
+:root[data-theme="dark"] .masthead__toggle:hover,
+:root[data-theme="dark"] .masthead__toggle:focus {
+  background-color: var(--pc-toggle-hover);
+}
+
+:root[data-theme="dark"] .masthead__toggle-icon::before {
+  content: "☀️";
+}
+
+hr,
+blockquote,
+.sidebar .author__urls-wrapper {
+  border-color: var(--pc-border);
+}
+
+code,
+pre,
+.highlight {
+  background-color: rgba(34, 75, 141, 0.08);
+  color: var(--pc-text);
+}
+
+:root[data-theme="dark"] code,
+:root[data-theme="dark"] pre,
+:root[data-theme="dark"] .highlight {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+.table,
+table,
+th,
+td {
+  border-color: var(--pc-border);
+}
+
+::selection {
+  background: var(--pc-link);
+  color: #fff;
+}
+
+:root[data-theme="dark"] ::selection {
+  background: var(--pc-link-hover);
+}
