@@ -6,5 +6,5 @@ main:
     url: "/#hobby"
   - title: "CV"
     url: "/#cv"
-  - title: "Blog"
-    url: "/blog/"
+  # - title: "Blog"
+  #   url: "/blog/"

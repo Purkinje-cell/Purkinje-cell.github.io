@@ -1,18 +1,15 @@
 
 <h1 align="center">
-AcadHomepage
+Dingcheng Yi - Academic Homepage
 </h1>
 
 <div align="center">
 
-[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [English README](./docs/README-en.md) 
+[![](https://img.shields.io/github/license/Purkinje-cell/Purkinje-cell.github.io)](https://github.com/Purkinje-cell/Purkinje-cell.github.io/blob/main/LICENSE) | [English README](./docs/README-en.md)
 
 </div>
 
-<p align="center">一个现代、响应式的个人学术主页</p>
+<p align="center">个人学术主页 - 基于 <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> 模板</p>
 
 
 <p align="center">
@@ -21,9 +18,12 @@ AcadHomepage
     <br>
 </p>
 
-一些例子：
-- [样例页面](https://rayeren.github.io/acad-homepage.github.io/)
-- [作者的个人主页](https://rayeren.github.io/)
+访问主页：
+- [https://purkinje-cell.github.io/](https://purkinje-cell.github.io/)
+
+模板参考：
+- [AcadHomepage 样例页面](https://rayeren.github.io/acad-homepage.github.io/)
+- [AcadHomepage 作者主页](https://rayeren.github.io/)
 
 ## 主要特点
 - **自动更新谷歌学术引用**: 借助谷歌学术爬虫和github action功能，本仓库可以自动更新作者的引用数和论文引用数。
@@ -35,10 +35,16 @@ AcadHomepage
 ## 快速开始
 
 1. Fork本仓库到`USERNAME/USERNAME.github.io`，其中`USERNAME`是你的github用户名。
-1. 配置谷歌学术引用爬虫：
-    1. 在你的谷歌学术引用页面的url里找到你的谷歌学术ID：例如，在url https://scholar.google.com/citations?user=SCHOLAR_ID 中，`SCHOLAR_ID`部分即为你的谷歌学术ID。
-    1. 在github本仓库页面的`Settings -> Secrets -> Actions -> New repository secret`中，添加`GOOGLE_SCHOLAR_ID`变量：`name=GOOGLE_SCHOLAR_ID`、`value=SCHOLAR_ID`。
-    1. 在github本仓库页面的`Action`中，点击*"I understand my workflows, go ahead and enable them"*启用workflows by clicking *"。本action将会谷歌学术引用的统计量数据`gs_data.json`到本仓库的`google-scholar-stats`分支中。每次修改main分支的内容会触发该action。本action也会在每天08:00 UTC定时触发。
+1. 配置谷歌学术引用爬虫（可选）：
+    1. 在你的谷歌学术引用页面的url里找到你的谷歌学术ID：例如，在url `https://scholar.google.com/citations?user=SCHOLAR_ID` 中，`SCHOLAR_ID`部分即为你的谷歌学术ID。
+    1. 在github本仓库页面的`Settings -> Secrets and variables -> Actions -> New repository secret`中，添加`GOOGLE_SCHOLAR_ID`变量：`name=GOOGLE_SCHOLAR_ID`、`value=SCHOLAR_ID`。
+    1. 在github本仓库页面的`Actions`标签中，点击*"I understand my workflows, go ahead and enable them"*启用workflows。
+    1. **验证配置**：启用后，可以在`Actions`标签中查看工作流运行状态。成功运行后，会在`google-scholar-stats`分支中生成`gs_data.json`文件。
+    1. **注意**：本action将会把谷歌学术引用的统计数据`gs_data.json`推送到本仓库的`google-scholar-stats`分支中。每次修改main分支的内容会触发该action，同时也会在每天08:00 UTC定时触发。
+    1. **故障排查**：如果工作流失败，请检查：
+        - `GOOGLE_SCHOLAR_ID` secret 是否正确设置
+        - 谷歌学术ID是否有效
+        - 在`Actions`标签中查看详细错误日志
 1. 使用 [favicon-generator](https://redketchup.io/favicon-generator)生成favicon（网页icon文件），并下载所有文件到`REPO/images`。
 1. 修改主页配置文件[_config.yml](../_config.yml):
     1. `title`: 主页标题
