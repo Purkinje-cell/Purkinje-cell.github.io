@@ -1,10 +1,12 @@
 # main navigation links
 main:
+  - title: "News"
+    url: "/#news"
   - title: "Research"
     url: "/#research"
-  - title: "Hobby"
-    url: "/#hobby"
+  - title: "Publications"
+    url: "/#publications"
   - title: "CV"
     url: "/#cv"
-  - title: "Blog"
-    url: "/blog/"
+  - title: "Collaboration"
+    url: "/#collaboration"
