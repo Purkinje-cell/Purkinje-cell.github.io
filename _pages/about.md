@@ -45,12 +45,12 @@ My research focuses on developing and applying computational frameworks to decod
 
 By bridging these dimensions, I aim to transform static molecular snapshots into predictive, dynamical models of complex biological processes.
 
-→ [Read more about my research](/research-descriptions/)
+<!-- → [Read more about my research](/research-descriptions/) -->
 
 # 🎓 Education
 
 - *2025.09 - Present*, Columbia University Irving Medical Center, New York, USA, PhD Student in Systems Biology
-- *2021.09 - 2025.06*, Peking University, Beijing, Bachelor of Science in Bioinformatics
+- *2021.09 - 2025.06*, Peking University, Beijing, Bachelor of Engineering in Bioinformatics
 
 <span class='anchor' id='publications'></span>
 
