@@ -143,6 +143,19 @@ table,
 th,
 td {
   border-color: var(--pc-border);
+  color: var(--pc-text);
+}
+
+thead {
+  background-color: var(--pc-border);
+}
+
+:root[data-theme="dark"] thead {
+  background-color: #1e293b;
+}
+
+:root[data-theme="dark"] td {
+  border-bottom-color: var(--pc-border);
 }
 
 ::selection {
