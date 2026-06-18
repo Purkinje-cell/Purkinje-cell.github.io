@@ -129,8 +129,3 @@ If you are working on related problems or have interesting datasets, I would lov
 
 I love playing the Rubik's Cube and diving into geeky pursuits like Arch Linux and Emacs. I'm also a big anime fan — my favorite is *Liz and the Blue Bird*.
 
-<span class='anchor' id='cv'></span>
-
-# 📄 CV
-
-Download my latest CV: [Dingcheng Yi CV (PDF)](files/Dingcheng_Yi_CV_latest.pdf)
