@@ -166,3 +166,15 @@ thead {
 :root[data-theme="dark"] ::selection {
   background: var(--pc-link-hover);
 }
+
+/* keep sidebar/social icons legible in dark mode (theme hardcodes light-mode brand colors) */
+:root[data-theme="dark"] .social-icons .fa,
+:root[data-theme="dark"] .social-icons .fab,
+:root[data-theme="dark"] .social-icons .fas,
+:root[data-theme="dark"] .social-icons .ai,
+:root[data-theme="dark"] .author__urls_sm .fa,
+:root[data-theme="dark"] .author__urls_sm .fab,
+:root[data-theme="dark"] .author__urls_sm .fas,
+:root[data-theme="dark"] .author__urls_sm .ai {
+  color: var(--pc-muted);
+}

@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a first-year PhD student in Systems Biology at Columbia University Irving Medical Center. Before my PhD, I completed my undergraduate training at the School of Life Sciences, Peking University with a major in Bioinformatics.
+I am a second-year PhD student in Systems Biology at Columbia University Irving Medical Center, jointly supervised by [Dr. Bing Ren](https://renlab.sdsc.edu/index.html) and [Dr. David Knowles](https://daklab.github.io/). Before my PhD, I completed my undergraduate training at the School of Life Sciences, Peking University with a major in Bioinformatics.
 
 <span class='anchor' id='news'></span>
 
@@ -37,11 +37,17 @@ I am a first-year PhD student in Systems Biology at Columbia University Irving M
 
 My research focuses on developing and applying computational frameworks to decode the multiscale regulatory logic of biological systems in health and disease. Specifically, I am interested in:
 
-1. **Tumor Immune Microenvironment** — Utilizing single-cell and spatial omics to dissect the complexity of the tumor immune microenvironment and identify mechanisms of therapy resistance
+1. **Tumor Immune Microenvironment**
 
-2. **Spatiotemporal Algorithms** — Developing spatiotemporal algorithms to infer how spatial organization and intercellular signaling drive cellular phenotypes and tissue morphogenesis
+   Cancer is highly heterogeneous, and its interactions with the immune system shape progression, metastasis, and response to treatment. During my undergraduate research in Zemin Zhang's group, I used single-cell RNA/TCR sequencing and whole-exome sequencing to study complementary aspects of the tumor microenvironment and mechanisms of immunotherapy resistance. In a phase 2 trial of neoadjuvant sintilimab plus chemotherapy for EGFR-mutant NSCLC ([*Cell Reports Medicine*, 2024](https://doi.org/10.1016/j.xcrm.2024.101615)), we found that infiltration and clonal expansion of CCR8+ Treg<sup>hi</sup>/CXCL13+ Tex<sup>lo</sup> cells mark an immunotherapy-resistant subtype, suggesting a signature for patient stratification. In a single-cell atlas of 234 patients with NSCLC treated with anti-PD-1 ([*Cell*, 2025](https://doi.org/10.1016/j.cell.2025.03.018)), we resolved five tumor immune microenvironment subtypes with distinct therapeutic outcomes. We also identified SARDH in one-carbon metabolism as a T-cell metabolic checkpoint and potential therapeutic target ([*Cell Mol Immunol*, 2025](https://doi.org/10.1038/s41423-025-01331-5)).
 
-3. **Gene Regulatory Networks** — Leveraging rapid protein perturbation systems to capture transient transcriptional dynamics, thereby uncovering the direct gene regulatory networks that govern cellular decision-making
+2. **Spatiotemporal Resolution of Tissue Structure**
+
+   Cell-type composition captures only part of tissue biology; spatial organization and intercellular signaling determine how tissues develop and function. During my summer research in Xiaojie Qiu's group at Stanford, I learned to use cell-cell interaction (CCI) analysis to move from tissue composition toward interaction and structure. Using 3D MERFISH data from developing mouse hearts, I constructed a three-dimensional CCI atlas, identified differential signaling patterns in cardiac progenitor cells, and characterized the interplay between Wnt and BMP signaling in juxtacardiac field development. I then developed an explainable AI model linking cell-cell communication to heart morphogenesis.
+
+3. **Genomics of Gene Regulation**
+
+   Perturbations reveal gene regulation by exposing causal responses, while sequence-to-function models identify the regulatory information encoded in DNA. In my current research at Columbia, I model rapid protein-depletion perturbations measured by scSLAM-seq to capture transient transcriptional dynamics and infer direct regulatory programs. In parallel, I develop sequence-to-function models with latent chromatin states to map DNA sequence to cell-type-specific omics profiles. By benchmarking these models against systems such as AlphaGenome and interpreting their variant-effect predictions, I aim to disentangle gene-regulatory grammar from downstream cellular behavior.
 
 By bridging these dimensions, I aim to transform static molecular snapshots into predictive, dynamical models of complex biological processes.
 
@@ -64,7 +70,7 @@ Chao Zhang, Yuxuan Sun, **Dingcheng Yi**, Benyuan Jiang, Lixu Yan, …, Zemin Zh
 <summary>Abstract</summary>
 <div class="abstract-content">
 <!-- TODO: Paste abstract here -->
-The clinical efficacy of neoadjuvant immunotherapy plus chemotherapy remains elusive in localized epidermal growth factor receptor (EGFR)-mutant non-small cell lung cancer (NSCLC). Here, we report interim results of a Simon's two-stage design, phase 2 trial using neoadjuvant sintilimab with carboplatin and nab-paclitaxel in resectable EGFR-mutant NSCLC. All 18 patients undergo radical surgery, with one patient experiencing surgery delay. Fourteen patients exhibit confirmed radiological response, with 44% achieving major pathological response (MPR) and no pathological complete response (pCR). Similar genomic alterations are observed before and after treatment without influencing the efficacy of subsequent EGFR-tyrosine kinase inhibitors (TKIs) in vitro. Infiltration and T cell receptor (TCR) clonal expansion of CCR8+ regulatory T (Treg)hi/CXCL13+ exhausted T (Tex)lo cells define a subtype of EGFR-mutant NSCLC highly resistant to immunotherapy, with the phenotype potentially serving as a promising signature to predict immunotherapy efficacy. Informed circulating tumor DNA (ctDNA) detection in EGFR-mutant NSCLC could help identify patients nonresponsive to neoadjuvant immunochemotherapy. These findings provide supportive data for the utilization of neoadjuvant immunochemotherapy and insight into immune resistance in EGFR-mutant NSCLC. 
+The clinical efficacy of neoadjuvant immunotherapy plus chemotherapy remains elusive in localized epidermal growth factor receptor (EGFR)-mutant non-small cell lung cancer (NSCLC). Here, we report interim results of a Simon's two-stage design, phase 2 trial using neoadjuvant sintilimab with carboplatin and nab-paclitaxel in resectable EGFR-mutant NSCLC. All 18 patients undergo radical surgery, with one patient experiencing surgery delay. Fourteen patients exhibit confirmed radiological response, with 44% achieving major pathological response (MPR) and no pathological complete response (pCR). Similar genomic alterations are observed before and after treatment without influencing the efficacy of subsequent EGFR-tyrosine kinase inhibitors (TKIs) in vitro. Infiltration and T cell receptor (TCR) clonal expansion of CCR8+ regulatory T (Treg)<sup>hi</sup>/CXCL13+ exhausted T (Tex)<sup>lo</sup> cells define a subtype of EGFR-mutant NSCLC highly resistant to immunotherapy, with the phenotype potentially serving as a promising signature to predict immunotherapy efficacy. Informed circulating tumor DNA (ctDNA) detection in EGFR-mutant NSCLC could help identify patients nonresponsive to neoadjuvant immunochemotherapy. These findings provide supportive data for the utilization of neoadjuvant immunochemotherapy and insight into immune resistance in EGFR-mutant NSCLC.
 </div>
 </details>
 
@@ -102,7 +108,7 @@ T-cell metabolism plays a pivotal role in defining T-cell functional states. Thr
 
 | Award | Year |
 |-------|------|
-| **Shen Tong Outstanding Undergraduate Award**, highest honor for undergraduates in the department | 2025 |
+| [**Shen Tong Outstanding Undergraduate Award**](https://www.bio.pku.edu.cn/homes/Index/jz_page/96.html), highest honor for undergraduates in the department | 2025 |
 | **National Scholarship** | 2024 |
 | **Pacemaker to Merit Student** | 2024 |
 | **May 4th Scholarship**, highest individual scholarship at Peking University | 2023 |
@@ -113,13 +119,12 @@ T-cell metabolism plays a pivotal role in defining T-cell functional states. Thr
 
 # 🤝 Open for Collaboration
 
-I am actively seeking collaborations in the following areas:
+I am interested in collaborations in two areas:
 
-- **Multi-modal single-cell analysis** — Integration of scRNA-seq, scATAC-seq, and spatial transcriptomics
-- **Tumor microenvironment modeling** — Computational approaches to understand immune-tumor interactions  
-- **Biomarker discovery** — Machine learning methods for identifying therapeutic response predictors
+- **Tumor immune microenvironment (TME)** — Single-cell, spatial, and multi-omic studies of tumor–immune interactions and immunotherapy response
+- **Regulatory genomics** — Perturbation and sequence-to-function modeling of gene regulation and variant effects
 
-If you are working on related problems or have interesting datasets, I would love to connect!
+Please reach out if you are working on related questions or datasets.
 
 📧 [dy2527@cumc.columbia.edu](mailto:dy2527@cumc.columbia.edu) · 💼 [LinkedIn](https://www.linkedin.com/in/dingcheng-yi-29810b370/)
 
@@ -127,5 +132,13 @@ If you are working on related problems or have interesting datasets, I would lov
 
 # 🎮 Beyond Research
 
-I love playing the Rubik's Cube and diving into geeky pursuits like Arch Linux and Emacs. I'm also a big anime fan — my favorite is *Liz and the Blue Bird*.
+I love playing the Rubik's Cube — my WCA ID is [2016YIDI01](https://www.worldcubeassociation.org/persons/2016YIDI01) — and diving into geeky pursuits like Arch Linux and Emacs. I'm also a big anime fan — my favorite is *Liz and the Blue Bird*.
+
+<span class='anchor' id='cv'></span>
+
+# 📄 CV
+
+My full CV is available here:
+
+[<i class="fas fa-file-pdf"></i> Download CV (PDF)]({{ site.author.cv | relative_url }}){: .btn .btn--info}
 

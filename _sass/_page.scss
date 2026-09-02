@@ -49,6 +49,7 @@
 }
 
 .page__content {
+  font-size: 16px;
   #about-me{
     margin-top: -10em;
       &:before { 
@@ -61,6 +62,7 @@
     }
   }
   h1 {
+    font-size: 24px;
     margin-top: 1em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
