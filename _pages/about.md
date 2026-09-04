@@ -47,7 +47,7 @@ My research focuses on developing and applying computational frameworks to decod
 
 3. **Genomics of Gene Regulation**
 
-   Perturbations reveal gene regulation by exposing causal responses, while sequence-to-function models identify the regulatory information encoded in DNA. In my current research at Columbia, I model rapid protein-depletion perturbations measured by scSLAM-seq to capture transient transcriptional dynamics and infer direct regulatory programs. In parallel, I develop sequence-to-function models with latent chromatin states to map DNA sequence to cell-type-specific omics profiles. By benchmarking these models against systems such as AlphaGenome and interpreting their variant-effect predictions, I aim to disentangle gene-regulatory grammar from downstream cellular behavior.
+   Perturbations reveal gene regulation by exposing causal responses, while sequence-to-function models identify the regulatory information encoded in DNA. In my current research at Columbia, I work on perturbation modeling and transcriptional dynamics. In parallel, I develop sequence-to-function models with latent chromatin states to map DNA sequence to cell-type-specific omics profiles. By benchmarking these models against systems such as AlphaGenome and interpreting their variant-effect predictions, I aim to disentangle gene-regulatory grammar from downstream cellular behavior.
 
 By bridging these dimensions, I aim to transform static molecular snapshots into predictive, dynamical models of complex biological processes.
 
